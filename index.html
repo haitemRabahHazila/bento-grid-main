@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <title>Social Media Management with AI</title>
+  <style>
+    :root {
+      --purple-100: hsl(254, 88%, 90%);
+      --purple-500: hsl(256, 67%, 59%);
+      --yellow-100: hsl(31, 66%, 93%);
+      --yellow-500: hsl(39, 100%, 71%);
+      --white: hsl(0, 0%, 100%);
+      --black: hsl(0, 0%, 7%);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      color: var(--black);
+      margin: 0;
+      padding: 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      background: var(--white);
+      height: 100vh;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(7,1fr);
+      gap: 1.5rem;
+      height: 90%;
+      width: 90%;
+      margin: auto;
+    }
+ 
+    .card:nth-child(1) {  
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
+
+    .card:nth-child(2) {
+      grid-column: 2 / 4;
+      grid-row: 1 / 3;
+      background: var(--purple-100);
+    }
+
+    .card:nth-child(3) { /* Schedule */
+      grid-column: 4 / 5;
+      grid-row: 1 / 5;
+    }
+
+    .card:nth-child(4) { /* AI Writing */
+      grid-column: 1 / 2;
+      grid-row: 4 / 7;
+      background: var(--yellow-100);
+    }
+
+    .card:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 5;
+  }
+
+  .card:nth-child(6) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 5;
+}
+
+    .card:nth-child(7) { /* Growth */
+      grid-column: 2 / 3;
+      grid-row: 5 / 7;
+      background: var(--purple-100);
+    }
+    .card:nth-child(8) { /* Growth */
+      grid-column: 3 / 5;
+      grid-row: 5 / 7;
+      background: var(--purple-100);
+    }
+
+    .card {
+      padding: 2rem;
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .card-header {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 0 0 1rem 0;
+    }
+
+    .stats {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--purple-500);
+      margin: 1rem 0;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .time-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .time-cell {
+      padding: 0.5rem;
+      text-align: center;
+      background: var(--white);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .time-cell.active {
+      background: var(--yellow-500);
+      color: var(--black);
+    }
+
+    .button {
+      background: var(--purple-500);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    .small-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      background: var(--purple-100);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 375px) {
+      body {
+        padding: 1rem;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .card {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        min-height: auto;
+      }
+
+      .time-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <!-- Create Post Card -->
+    <div class="card">
+      <h2 class="card-header">Create and schedule content quicker.</h2>
+      <button class="button">Create Post</button>
+    </div>
+
+    <!-- Main Header Card -->
+    <div class="card">
+      <h1 class="card-header">Social Media 10x Faster with AI</h1>
+      <p>Over 4,000 5-star reviews</p>
+    </div>
+
+    <!-- Schedule Card -->
+    <div class="card">
+      <h2 class="card-header">Maintain a consistent posting schedule.</h2>
+      <div class="small-text">
+        <strong>August 2024</strong> · Week 1
+      </div>
+    </div>
+
+    <!-- AI Writing Card -->
+    <div class="card">
+      <h2 class="card-header">Write your content using AI.</h2>
+    </div>
+
+    <!-- Stats Card -->
+    <div class="card">
+      <div class="stats">>56%</div>
+      <p>faster audience growth</p>
+    </div>
+
+    <!-- Timing Card -->
+    <div class="card">
+      <h2 class="card-header">Schedule to social media.</h2>
+      <div>
+         
+      </div>
+      <p class="small-text">Optimize post timings to publish content at the perfect time for your audience.</p>
+    </div>
+
+    <!-- Growth Card -->
+    <div class="card">
+      <h2 class="card-header">Grow followers with non-stop content.</h2>
+    </div>
+
+    <div class="card">
+      <h2 class="card-header">Create and schedule content quicker.</h2>
+      <button class="button">Create Post</button>
+    </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
